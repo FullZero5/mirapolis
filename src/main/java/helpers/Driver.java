@@ -79,7 +79,7 @@ public class Driver {
     public static void waitForUrlDoesNotContain(String urlChunk) {
         int maxTime = 20;
         while(  currentDriver().getCurrentUrl().contains(urlChunk)  && maxTime > 0) {
-            wait(1);
+            waitPage(1);
             maxTime--;
         }
     }
@@ -102,7 +102,7 @@ public class Driver {
         currentDriver().quit();
     }
 
-    public static void wait(int seconds) {
+    public static void waitPage(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {
